@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: geosed-db
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb_data:/var/lib/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: GeoSED_2022!
+      DOCKER_INFLUXDB_INIT_BUCKET: GeoSEDWaterLevel
+      DOCKER_INFLUXDB_INIT_ORG: GeoSED
+
+  grafana:
+    build: .  # Tells Docker Compose to build the image from the Dockerfile in the current directory
+    container_name: geosed-ui
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=GeoSED_2022!
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb_data:
+    external: true
+  grafana_data:
+    external: true
