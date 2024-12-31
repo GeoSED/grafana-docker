@@ -5,7 +5,10 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 # Environment variables for InfluxDB token and organization
 token = os.environ.get("INFLUXDB_TOKEN")
 org = "GeoSED"
-url = "http://localhost:8086"
+#url = "http://localhost:8086"
+url = "http://18.136.212.15:8086"
+
+
 
 # Create InfluxDB client
 write_client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
