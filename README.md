@@ -2,8 +2,8 @@
 
 ## FRAMEWORK
 Below is the technical specifications of the Grafana App
-- Grafana (React 17.0.1)
-- InfluxDB (Postgresql 14-alpine)
+- Grafana (grafana:latest)
+- InfluxDB (influxdb:2.7)
   
 ## LOCAL INSTALLATION
 
