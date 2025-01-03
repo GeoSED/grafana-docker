@@ -16,7 +16,7 @@ services:
       DOCKER_INFLUXDB_INIT_ORG: GeoSED
 
   grafana:
-    build: .  # Tells Docker Compose to build the image from the Dockerfile in the current directory
+    build: .
     container_name: geosed-ui
     ports:
       - "3000:3000"
