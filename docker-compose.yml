@@ -11,7 +11,7 @@ services:
     environment:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME: admin
-      DOCKER_INFLUXDB_INIT_PASSWORD: GeoSED_2022!
+      DOCKER_INFLUXDB_INIT_PASSWORD: admin
       DOCKER_INFLUXDB_INIT_BUCKET: GeoSEDWaterLevel
       DOCKER_INFLUXDB_INIT_ORG: GeoSED
 
@@ -24,7 +24,7 @@ services:
       - ./grafana_data:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=GeoSED_2022!
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - influxdb
 

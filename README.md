@@ -93,7 +93,7 @@ git config --global user.email "your_email"
 Clone the repository:
 
 ```
-git clone https://github.com/aeraterta/grafana-docker.git
+git clone https://github.com/GeoSED/grafana-docker.git
 ```
 
 #### Docker
